@@ -1,6 +1,3 @@
-name: 'Rust Checks'
-description: 'Run various rust checks'
-
 runs:
   using: "composite"
   steps:
