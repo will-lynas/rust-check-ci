@@ -11,16 +11,9 @@ runs:
         components: rustfmt, clippy
 
     - shell: bash
-      run: cargo fmt --check
-
-    - shell: bash
-      run: cargo check
-
-    - shell: bash
-      run: cargo check --tests
-
-    - shell: bash
-      run: cargo clippy -- -D warnings
-
-    - shell: bash
-      run: cargo test --all
+      run: |
+        cargo fmt --check
+        cargo check
+        cargo check --tests
+        cargo clippy -- -D warnings
+        cargo test --all
