@@ -4,33 +4,26 @@ description: 'Run various rust checks'
 runs:
   using: "composite"
   steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Set up Rust
-      uses: actions-rs/toolchain@v1
+    - uses: actions-rs/toolchain@v1
       with:
         toolchain: nightly
         profile: minimal
         override: true
         components: rustfmt, clippy
 
-    - name: Run cargo fmt --check
-      shell: bash
+    - shell: bash
       run: cargo fmt --check
 
-    - name: Run cargo check
-      shell: bash
+    - shell: bash
       run: cargo check
 
-    - name: Run cargo check --tests
-      shell: bash
+    - shell: bash
       run: cargo check --tests
 
-    - name: Run cargo clippy
-      shell: bash
+    - shell: bash
       run: cargo clippy -- -D warnings
 
-    - name: Run cargo test
-      shell: bash
+    - shell: bash
       run: cargo test --all
