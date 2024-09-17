@@ -16,16 +16,21 @@ runs:
         components: rustfmt, clippy
 
     - name: Run cargo fmt --check
+      shell: bash
       run: cargo fmt --check
 
     - name: Run cargo check
+      shell: bash
       run: cargo check
 
     - name: Run cargo check --tests
+      shell: bash
       run: cargo check --tests
 
     - name: Run cargo clippy
+      shell: bash
       run: cargo clippy -- -D warnings
 
     - name: Run cargo test
+      shell: bash
       run: cargo test --all
