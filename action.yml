@@ -3,6 +3,7 @@ runs:
   steps:
     - uses: actions/checkout@v4
 
+    # TODO: this has been archived
     - uses: actions-rs/toolchain@v1
       with:
         toolchain: nightly
