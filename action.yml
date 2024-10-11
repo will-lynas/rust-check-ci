@@ -2,7 +2,6 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v4
-    - uses: extractions/setup-just@v2
 
     # TODO: this has been archived
     - uses: actions-rs/toolchain@v1
@@ -14,7 +13,6 @@ runs:
 
     - shell: bash
       run: |
-        just init
         cargo fmt --check
         cargo check
         cargo check --tests
