@@ -12,6 +12,8 @@ runs:
 
     - shell: bash
       run: |
+        cargo install just
+        just init
         cargo fmt --check
         cargo check
         cargo check --tests
